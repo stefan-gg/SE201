@@ -5,7 +5,7 @@ import java.util.*;
 
 public interface IAdministracijaPacijenta {
 
-    void obrisiPacijenta(String jmbgPacijenta);
+    void otpustiPacijenta(String jmbgPacijenta);
 
     void pogledajPodatkeOPacijentu(String jmbgPacijenta);
 

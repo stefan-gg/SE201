@@ -29,13 +29,13 @@ public enum AlertType {
 
     }
 
-    public class BrisanjePoseteGUI {
+    public class OtkazivanjePoseteGUI {
 
         public List<ZakazanaPoseta> prikazZakazanihPoseta;
 
         public boolean obrisiPosetu;
 
-        public void otvoriBrisanjePoseteGUI() {
+        public void otvoriOtkazivanjePoseteGUI() {
         }
 
         public void prikazPoruke(String poruka, AlertType tipPoruke) {

@@ -103,7 +103,7 @@ public class PacijentTest {
         String jmbgPacijenta = "1111111111111";
         Pacijent instance = new Pacijent();
         instance.setJmbg("0");
-        instance.obrisiPacijenta(jmbgPacijenta);
+        instance.otpustiPacijenta(jmbgPacijenta);
     }
 
     @Test

@@ -147,7 +147,7 @@ public class ZakazanaPosetaTest {
         Date datumPosete = null;
         ZakazanaPoseta instance = new ZakazanaPoseta();
         boolean expResult = true;
-        boolean result = instance.obrisanaPoseta(jmbgPacijenta, jmbgPosetioca, datumPosete);
+        boolean result = instance.otkazanaPoseta(jmbgPacijenta, jmbgPosetioca, datumPosete);
         assertEquals(expResult, result);
     }
 
@@ -185,7 +185,7 @@ public class ZakazanaPosetaTest {
         String odgovor = "Da";
         ZakazanaPoseta instance = new ZakazanaPoseta();
         boolean expResult = true;
-        boolean result = instance.potvrdaBrisanjaPosete(odgovor);
+        boolean result = instance.potvrdaOtkazivanjaPosete(odgovor);
         assertEquals(expResult, result);
     }
 

@@ -10,6 +10,7 @@ public class Pacijent extends Osoba implements IAdministracijaPacijenta {
     private int stepenBolesti;
     private int idBrojIzabranogDoktora;
     private String jmbg;
+    private boolean otpustenIzBolnice;
 
     public java.util.List<ZakazanaPoseta> zakazanaPoseta;
 
@@ -34,11 +35,19 @@ public class Pacijent extends Osoba implements IAdministracijaPacijenta {
     }
 
     public void setJmbg(String newJmbg) throws JMBGException {
-        if(newJmbg.length() == 13){
-           jmbg = newJmbg; 
+        if (newJmbg.length() == 13) {
+            jmbg = newJmbg;
         } else {
-         throw new JMBGException("JMBG mora da ima dužinu od 13 broja !!!");
+            throw new JMBGException("JMBG mora da ima dužinu od 13 broja !!!");
         }
+    }
+
+    public boolean isOtpustenIzBolnice() {
+        return otpustenIzBolnice;
+    }
+
+    public void setOtpustenIzBolnice(boolean otpustenIzBolnice) {
+        this.otpustenIzBolnice = otpustenIzBolnice;
     }
 
     public Pacijent() {
@@ -54,7 +63,7 @@ public class Pacijent extends Osoba implements IAdministracijaPacijenta {
     }
 
     @Override
-    public void obrisiPacijenta(String jmbgPacijenta) {
+    public void otpustiPacijenta(String jmbgPacijenta) {
         // brisanje pacijenta sa datim JMBG-om iz baze ako postoji
         List<Pacijent> pacijenti = new ArrayList<>();
         for (Pacijent pacijent : pacijenti) {

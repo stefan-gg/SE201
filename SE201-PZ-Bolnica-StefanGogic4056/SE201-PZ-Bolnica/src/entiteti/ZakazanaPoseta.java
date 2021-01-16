@@ -1,17 +1,17 @@
 package entiteti;
 
 import interfejsi.IZakazivanjePosete;
-import interfejsi.IBrisanjePosete;
+import interfejsi.IOtkazivanjePosete;
 import izuzeci.JMBGException;
 import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
-public class ZakazanaPoseta implements IZakazivanjePosete, IBrisanjePosete {
+public class ZakazanaPoseta implements IZakazivanjePosete, IOtkazivanjePosete {
 
     private String jmbgPacijenta;
     private String jmbgPosetioca;
     private Date datumPosete;
+    private boolean otkazanaPoseta;
+    private String vrstaPosete;
 
     public ZakazanaPoseta() {
     }
@@ -54,6 +54,22 @@ public class ZakazanaPoseta implements IZakazivanjePosete, IBrisanjePosete {
         datumPosete = newDatumPosete;
     }
 
+    public boolean isOtkazanaPoseta() {
+        return otkazanaPoseta;
+    }
+
+    public void setOtkazanaPoseta(boolean otkazanaPoseta) {
+        this.otkazanaPoseta = otkazanaPoseta;
+    }
+
+    public String getVrstaPosete() {
+        return vrstaPosete;
+    }
+
+    public void setVrstaPosete(String vrstaPosete) {
+        this.vrstaPosete = vrstaPosete;
+    }
+
     @Override
     public boolean mogucnostZakazivanjaPosete(String jmbgPacijenta, String jmbgPosetioca, Date datumPosete) {
         //Lista sa svim pacijentima iz koje se pronalazi pacijent sa unetim JMBG-om i proverava se njegov stepen bolesti
@@ -93,7 +109,7 @@ public class ZakazanaPoseta implements IZakazivanjePosete, IBrisanjePosete {
     }
 
     @Override
-    public boolean obrisanaPoseta(String jmbgPacijenta, String jmbgPosetioca, Date datumPosete) {
+    public boolean otkazanaPoseta(String jmbgPacijenta, String jmbgPosetioca, Date datumPosete) {
         return true;
     }
 
@@ -137,7 +153,7 @@ public class ZakazanaPoseta implements IZakazivanjePosete, IBrisanjePosete {
     }
 
     @Override
-    public boolean potvrdaBrisanjaPosete(String odgovor) {
+    public boolean potvrdaOtkazivanjaPosete(String odgovor) {
         if (odgovor.equals("da") || odgovor.equals("Da")) {
             return true;
         }
